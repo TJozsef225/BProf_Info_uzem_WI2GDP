@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="px-16 py-6 bg-gray-500">
+      <h4 class="text-3x1 font-bolt mb-4 mt-0" align="center">{{school}}</h4>
+      <h5 class="text-gray-700 text-sm" align="center">{{description}}</h5>
+<table>
+  <tr>
+    <td>
+    <ul>
+      <li *ngFor="let students of students">
+        {{ students.name }}, {{students.age}} éves, {{students.momName}}, SNI: {{students.isSNI}}
+        <tr><button (click)="deleteStudent(students)" class="btn btn-sm btn-danger">x</button></tr>
+      </li>
+    </ul>
+  </td>
+  <td>
+    <div class="col-md-6">
+      <button class="btn btn-sm btn-succes" align="center" (click)="showForm()" *ngIf="!isFormVisible">Új jelentkező</button>
+      <form *ngIf="isFormVisible">
+        <div class="mb-3">
+          <label for="name" class="form-label">Név</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newStudent.name">
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Kor</label>
+          <input type="number" class="form-control" id="age" name="age" [(ngModel)]="newStudent.age">
+        </div>
+        <div class="mb-3">
+          <label for="momName" class="form-label">Anyja neve</label>
+          <input type="text" class="form-control" id="momName" name="momName" [(ngModel)]="newStudent.momName">
+        </div>
+        <div class="mb-3">
+          <label for="isSNI" class="form-label">SNI-s?</label>
+          <select class="form-select" id="isSNI" name="isSNI" [(ngModel)]="newStudent.isSNI">
+            
+            <option vakue="igaz">Igen</option>
+            <option value="hamis">Nem</option>
+          </select>
+        </div>
+        <button class="btn btn-sm btn-primary" (click)="saveStudents()">Hozzáadás</button>
+      </form>
+    </div>
+  </td>
+  </tr>
+  
+</table>
+
+<br>
+  </div>
+   
+  </div>
+</div>
+
