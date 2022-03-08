@@ -1,0 +1,49 @@
+<div class="bg-white rounded shadow border p-6">
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-3xl font-bold mb-4 mt-0">New Joke</h5>
+      <hr size="1"><br>
+      <form>
+        <div >
+          <input type="text" class="
+          form-control
+          block
+          w-64
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+        " id="name" name="name" placeholder="Let your name be known" [(ngModel)]="newJoke.name">
+        </div>
+        
+        <br>
+        <textarea class="form-control block w-64 px-3 py-1.5 text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        id="joke"
+        name="joke"
+        rows="3"
+        placeholder="Share us your joke"
+        [(ngModel)]="newJoke.jokes">
+      </textarea>
+      <br>
+        <button align="right" class="bg-blue-500 hover:bg-blue-400 text-white font-bold
+         py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" (click)="saveJoke()">Submit</button>
+      </form>
+      <br>
+      <app-vote></app-vote>
+    </div>
+  </div>
+</div>

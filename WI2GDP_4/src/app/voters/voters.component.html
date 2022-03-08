@@ -1,0 +1,11 @@
+<div class="bg-white rounded shadow border p-6">
+    <div class="col-md-12">
+        <h4 class="text-3x1 font-bold mb-4 mt-0">Jokes List</h4>
+        <h5>Overall stats: {{sumPastVotesFunny() + sumPastVotesNotFunny()}} votes ({{ sumPastVotesFunny() }}, {{ sumPastVotesNotFunny() }})</h5>
+        <div class="row">
+            <div class="col-md-12">
+                <app-jokelist [creators]="creators" (voted)="handleVote($event)"></app-jokelist>
+            </div>
+        </div>
+    </div>
+</div>
