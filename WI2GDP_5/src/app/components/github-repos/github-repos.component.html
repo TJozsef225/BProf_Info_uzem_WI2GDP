@@ -1,0 +1,14 @@
+<div class="card mt-3">
+    <div class="card-header bg-light text-dark">
+        <h4>Github repo-k</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li *ngFor="let repo of githubRepos" class="list-group-item d-flex justify-content-between">
+                    <a [href]="repo.html_url" class="text-primary" target="_blank">{{repo.name}}</a>
+                    <span class="badge alert-success">{{repo.stargazers_count}} csillagok</span>
+                    <span class="badge alert-warning">{{repo.watchers_count}} figyelés</span>
+            </li>
+        </ul>
+    </div>
+</div>

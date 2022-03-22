@@ -9,6 +9,7 @@ import { Creators, creators } from 'src/app/creators';
 export class JokeListComponent implements OnInit {
 
   @Input() creators: Creators[] = creators;
+  @Output() voted2 = new EventEmitter();
   @Output() voted = new EventEmitter<boolean>();
   isVisible: boolean = false;
   constructor() { }
@@ -17,11 +18,13 @@ export class JokeListComponent implements OnInit {
   }
 
 
-  funny() {
+  funny(x: number) {
     this.voted.emit(true);
+    this.voted2.emit({ id: this.creators[x].id });
 
   }
-  notFunny() {
+  notFunny(x: number) {
     this.voted.emit(false);
+    this.voted2.emit({ id: this.creators[x].id });
   }
 }

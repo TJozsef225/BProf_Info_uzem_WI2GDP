@@ -7,6 +7,7 @@ import { creators, Creators } from 'src/app/creators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  creators2: Creators[] = creators;
   title = 'vicces viccek pont hu';
   creators = creators;
   newJoke!: Creators;
@@ -17,6 +18,7 @@ export class AppComponent {
 
   initializeJoke() {
     this.newJoke = {
+      id: 0,
       name: '',
       jokes: '',
       funny: 0,

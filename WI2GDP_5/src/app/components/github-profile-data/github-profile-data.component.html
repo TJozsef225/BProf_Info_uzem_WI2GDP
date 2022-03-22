@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <span class="badge alert-primary">{{githubProfile.followers}} követő</span>
+        <span class="badge alert-danger">{{githubProfile.following}} követ</span>
+        <span class="badge alert-success">{{githubProfile.public_repos}} publikus repo</span>
+        <span class="badge alert-warning">{{githubProfile.public_gists}} gists-ek</span>
+       
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Név: <span class="font-weight-bold">{{githubProfile.name}}</span>
+            </li>
+            <li class="list-group-item">
+                Hely: {{githubProfile.location}}
+            </li>
+            <li class="list-group-item">
+                E-mail cím: {{githubProfile.email}}
+            </li>
+            <li class="list-group-item">
+                Cég: <a [href]="githubProfile.company" target="_blank">{{githubProfile.company}}</a>
+            </li>
+            <li class="list-group-item">
+                Ekkor regisztrált: {{githubProfile.created_at | date}}
+            </li>
+            <li class="list-group-item">
+                Profil URL-cím: <a [href]="githubProfile.html_url" target="_blank">{{githubProfile.html_url}}</a>
+            </li>
+        </ul>
+    </div>
+    
+</div>

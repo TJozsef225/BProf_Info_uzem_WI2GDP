@@ -41,14 +41,19 @@ export class VotersComponent implements OnInit {
     this.creators[a].notFunny++;
   }*/
 
-  handleVote(funny: boolean) {
+  handleVote(funny: boolean, x: number) {
     if(funny == true) {
-      this.creators[0].funny++;
+      this.creators[x].funny++;
       this.funny++;
     } else {
-      this.creators[0].notFunny++;
+      this.creators[x].notFunny++;
       this.notFunny++;
     }
     
   }
+
+  returnID(x: number) : number {
+    return this.creators[x].id;
+  }
+
 }

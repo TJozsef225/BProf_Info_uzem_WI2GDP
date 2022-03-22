@@ -1,0 +1,14 @@
+<div *ngIf="githubProfile" class="card mt-3">
+    <div class="row">
+        <div class="col-md-3">
+            <app-github-profile-card [githubProfile]="githubProfile">
+
+            </app-github-profile-card>
+        </div>
+        <div class="col-md-9">
+            <app-github-profile-data [githubProfile]="githubProfile">
+
+            </app-github-profile-data>
+        </div>
+    </div>
+</div>
