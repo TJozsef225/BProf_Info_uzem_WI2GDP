@@ -1,21 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="px-16 py-6 bg-gray-500">
-      <h4 class="text-3x1 font-bolt mb-4 mt-0" align="center">{{school}}</h4>
-      <h5 class="text-gray-700 text-sm" align="center">{{description}}</h5>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg px-2 py-6 bg-green-500">
+      <h4 class="font-semibold text-slate-900" align="center">{{school}}</h4>
+      <h5 class="text-slate-500" align="center">{{description}}</h5>
 <table>
   <tr>
     <td>
     <ul>
-      <li *ngFor="let students of students">
+      <li *ngFor="let students of students" class="mb-3 max-w-sm rounded overflow-hidden shadow-lg px-4 py-4 bg-blue-500">
         {{ students.name }}, {{students.age}} éves, {{students.momName}}, SNI: {{students.isSNI}}
-        <tr><button (click)="deleteStudent(students)" class="btn btn-sm btn-danger">x</button></tr>
+        <tr><button (click)="deleteStudent(students)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">x</button></tr>
       </li>
     </ul>
   </td>
   <td>
-    <div class="col-md-6">
-      <button class="btn btn-sm btn-succes" align="center" (click)="showForm()" *ngIf="!isFormVisible">Új jelentkező</button>
+    <div class="pt-8 pb-4">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" align="center" (click)="showForm()" *ngIf="!isFormVisible">Új jelentkező</button>
       <form *ngIf="isFormVisible">
         <div class="mb-3">
           <label for="name" class="form-label">Név</label>
@@ -37,7 +37,7 @@
             <option value="hamis">Nem</option>
           </select>
         </div>
-        <button class="btn btn-sm btn-primary" (click)="saveStudents()">Hozzáadás</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="saveStudents()">Hozzáadás</button>
       </form>
     </div>
   </td>
