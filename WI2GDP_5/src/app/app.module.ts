@@ -10,6 +10,8 @@ import { GithubProfileCardComponent } from './components/github-profile-card/git
 import { GithubProfileDataComponent } from './components/github-profile-data/github-profile-data.component';
 import { GithubReposComponent } from './components/github-repos/github-repos.component';
 import { FormsModule } from '@angular/forms';
+import { GithubRepoAppComponent } from './components/github-repo-app/github-repo-app.component';
+import { GithubRepoAppReposComponent } from './components/github-repo-app-repos/github-repo-app-repos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     GithubProfileComponent,
     GithubProfileCardComponent,
     GithubProfileDataComponent,
-    GithubReposComponent
+    GithubReposComponent,
+    GithubRepoAppComponent,
+    GithubRepoAppReposComponent
   ],
   imports: [
     BrowserModule,
