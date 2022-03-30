@@ -27,7 +27,7 @@ export class GithubService {
   }
 
   public getSearchRepos(searchQuery: string):Observable<any[]> {
-    let dataURL = `https://api.github.com/search/repositories?q=${searchQuery}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`;
+    let dataURL = `https://api.github.com/search/repositories?q=${searchQuery}`;
     return this.httpClient.get<any[]>(dataURL).pipe(retry(1), catchError(this.handleErrors));
   }
 

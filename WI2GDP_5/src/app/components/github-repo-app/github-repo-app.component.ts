@@ -8,25 +8,28 @@ import { GithubService } from 'src/app/services/github.service';
 })
 export class GithubRepoAppComponent implements OnInit {
 
-  items :string = "items.";
+  
   public githubRepoSearch!:string;
-  public githubRepos!:any[];
+  public githubRepos!:any;
   public errorMessage!:string;
+  public items!: any[];
 
   constructor(private githubService:GithubService) {
     
    }
 
   ngOnInit(): void {
+
   }
 
 
   
   public searchRepo() {
     this.githubService.getSearchRepos(this.githubRepoSearch).subscribe(
-      (data: any[]) => {
+      data => {
+        //this.items = data[0]['items'];
         this.githubRepos = data;
-      }, (error) => {
+      }, error => {
         this.errorMessage = error;
       }
     )

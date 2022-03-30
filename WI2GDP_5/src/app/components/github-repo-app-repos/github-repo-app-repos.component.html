@@ -4,10 +4,12 @@
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li *ngFor="let repo of githubRepos" class="list-group-item d-flex justify-content-between">
-                    <a [href]="repo.html_url" class="text-primary" target="_blank">{{repo.name}}</a>
-                    <span class="badge alert-success">{{repo.stargazers_count}} csillagok</span>
-                    <span class="badge alert-warning">{{repo.watchers_count}} figyelés</span>
+            
+            <li *ngFor="let repo of githubRepos.items" class="list-group-item d-flex justify-content-between">
+                    <a [href]="repo.html_url" class="text-primary" target="_blank">{{repo.name}}</a> <p class="text-secondary">{{repo.full_name}}</p>
+                    <p class="text-left">{{repo.description}}</p>
+                    <span class="badge alert-warning pull-right">{{repo.watchers_count}} figyelés</span>
+                    <br>
             </li>
         </ul>
     </div>

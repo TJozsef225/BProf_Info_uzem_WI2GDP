@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GithubRepoAppReposComponent implements OnInit {
 
-  @Input() githubRepos: any[] = [];
+  @Input() githubRepos:any;
   constructor() { }
 
   ngOnInit(): void {

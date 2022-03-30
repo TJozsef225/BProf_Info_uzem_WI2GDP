@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./github-repos.component.css']
 })
 export class GithubReposComponent implements OnInit {
-  @Input() githubRepos: any[] = [];
+  @Input() githubRepos:any;
   constructor() { }
 
   ngOnInit(): void {
