@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-floating" (click)="showTag()">
+                <b class="bi bi-plus">Új tartalom</b>
+              </button>
+        </div>
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="successMessage">
+      {{ successMessage }}
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+      {{ errorMessage }}
+  </div>
+
+    <form *ngIf="showNewTodo" [formGroup]="todoForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Név:</label>
+        <input type="text" class="form-control" id="name" name="name" formControlName="name">
+        <div *ngIf="name.invalid && (name.touched || name.dirty)">
+            <small class="text-danger" *ngIf="name.errors?.['required']">A név érték nem lehet üres.</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Leírás:</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+    </div>
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Határidő:</label>
+        <input type="text" class="form-control" id="dueDate" name="dueDate" formControlName="dueDate">
+        <div *ngIf="dueDate.invalid && (dueDate.touched || dueDate.dirty)">
+            <small class="text-danger" *ngIf="dueDate.errors?.['required']">A határidő nem megfelelő formátumban van.</small>
+        </div>
+    </div>
+
+        <button type="button" class="btn btn-primary" (click)="createTodo()">Hozzáadás</button>
+      </form>
+    
+    
+    <app-todo [todos]="todos"></app-todo>
+</div>

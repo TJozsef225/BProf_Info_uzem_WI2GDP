@@ -1,0 +1,32 @@
+<div class="row" *ngFor="let todo of todos">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>{{todo.name}}</h4>
+                <button type="button" class="btn btn-primary btn-floating" (click)="goToTodoForm(todo.id)">
+                    <b class="bi bi-plus">Módosítás</b>
+                </button>
+               
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                       Leírás: <span class="font-weight-bold">{{todo.description}}</span>
+                    </li>
+                    <li class="list-group-item">
+                       Határidó: {{todo.dueDate}}
+                    </li>
+                    <li class="list-group-item" *ngIf="todo.success == false">
+                        <p>Teljesítve?: Nem</p>
+                    </li>
+                    <li class="list-group-item" *ngIf="todo.success == true">
+                        <p>Teljesítve?: Igen</p>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+</div> 
